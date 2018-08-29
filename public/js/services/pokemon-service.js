@@ -1,9 +1,9 @@
 "use strict";
-function PokemonService($http) {
+function CartService($http) {
   const vm = this;
-  vm.getAllPokemon = () => {
+  vm.getAllItems = () => {
     return $http({
-      url: "/pokemon/all",
+      url: "/cart-items",
       method: "GET"
     }).then((response) => {
       vm.pokemonList = response.data;
@@ -32,4 +32,4 @@ function PokemonService($http) {
 
 angular
   .module("App")
-  .service("PokemonService", PokemonService);
+  .service("CartService", CartService);

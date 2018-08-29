@@ -3,7 +3,7 @@ const express = require("express");
 const commands = express.Router();
 const pokeball = require("../pokemon/pokemon");
 
-commands.get("/pokemon/all", (req, res) => {
+commands.get("/cart-items", (req, res) => {
   console.log("GET all.");
   res.send(pokeball);
 });
