@@ -1,0 +1,9 @@
+<p>{{ $ctrl.msg }}</p>
+
+<section ng-repeat="pokemon in $ctrl.pokemonList">
+  <p>Product: {{ pokemon.product }}</p>
+  <p>Price: {{ pokemon.price }}</p>
+  <p>Quantity: {{ pokemon.quantity }}</p>
+  <p>ID: {{ pokemon.id }}</p>
+  <button ng-click="$ctrl.selectPokemon(pokemon.id);">Add to Cart</button>
+</section>
