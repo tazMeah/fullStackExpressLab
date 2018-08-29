@@ -3,8 +3,8 @@ angular
   .module("App")
   .config(($routeProvider) => {
     $routeProvider
-      .when("/select-pokemon", {
-        template: "<select-pokemon></select-pokemon>"
+      .when("/select-cart", {
+        template: "<select-cart></select-cart>"
       })
       .when("/battleground", {
         template: "<battle-ground></battle-ground>"
@@ -12,5 +12,5 @@ angular
       .when("/results", {
         template: "<results></results>"
       })
-      .otherwise({ redirectTo: "/select-pokemon" });
+      .otherwise({ redirectTo: "/select-cart" });
   });

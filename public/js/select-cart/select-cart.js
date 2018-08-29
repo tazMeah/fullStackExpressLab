@@ -1,13 +1,13 @@
 "use strict";
-const selectPokemon = {
-  templateUrl: `./js/select-pokemon/select-pokemon.html`,
+const selectCart = {
+  templateUrl: `./js/select-cart/select-cart.html`,
   controller: ["CartService", function(CartService) {
     const vm = this;
     CartService.getAllItems().then((response) => {
-      vm.pokemonList = response;
+      vm.cartList = response;
     });
-    vm.selectPokemon = (id) => {
-      CartService.getIndividualPokemon(id).then((response) => {
+    vm.selectCart = (id) => {
+      CartService.getIndividualCart(id).then((response) => {
         vm.msg = `You have selected ${response.name}`;
       });
     };
@@ -16,4 +16,4 @@ const selectPokemon = {
 
 angular
   .module("App")
-  .component("selectPokemon", selectPokemon);
+  .component("selectCart", selectCart);

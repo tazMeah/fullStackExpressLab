@@ -6,26 +6,26 @@ function CartService($http) {
       url: "/cart-items",
       method: "GET"
     }).then((response) => {
-      vm.pokemonList = response.data;
-      return vm.pokemonList;
+      vm.cartList = response.data;
+      return vm.cartList;
     });
   };
-  vm.getIndividualPokemon = (id) => {
+  vm.getIndividualCart = (id) => {
     return $http({
-      url: "/pokemon/id/" + id,
+      url: "/cart/id/" + id,
       method: "GET"
     }).then((response) => {
-      vm.userPokemon = response;
-      return vm.userPokemon;
+      vm.userCart = response;
+      return vm.userCart;
     });
   };
   vm.getOpponent = () => {
     return $http({
-      url: "/pokemon/id/" + 25,
+      url: "/cart/id/" + 25,
       method: "GET"
     }).then((response) => {
-      vm.opponentPokemon = response;
-      return vm.opponentPokemon;
+      vm.opponentCart = response;
+      return vm.opponentCart;
     });
   };
 }

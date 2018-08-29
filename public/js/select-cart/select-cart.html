@@ -1,0 +1,31 @@
+<p>{{ $ctrl.msg }}</p>
+
+<!-- <section ng-repeat="cart in $ctrl.cartList">
+  <p>ID: {{ cart.id }}</p>
+  <div></div>
+  <p>Product: {{ cart.product }}</p>
+  <p>Price: {{ cart.price }}</p>
+  <p>Quantity: {{ cart.quantity }}</p>
+  <button ng-click="$ctrl.selectCart(cart.id);">Add to Cart</button>
+</section> -->
+
+<section ng-repeat="cart in $ctrl.cartList">
+  <figure>
+      <div style="background:url({{cart.img}})">
+        <p>ID: {{ cart.id }}</p>
+      </div>
+      <figcaption>
+        <p>Product: {{ cart.product }}</p>
+        <p>Price: ${{ cart.price }}</p>
+        <p>Quantity: {{ cart.quantity }}</p>
+
+      </figcaption>
+  </figure>
+  <article>
+    <h2>{{cart.product}}</h2>
+    <p class="stars">{{cart.stars}}</p>
+    <p class="review">{{cart.review}}</p>
+  </article>
+  
+  <button ng-click="$ctrl.selectCart(cart.id);">Add to Cart</button>
+</section>
