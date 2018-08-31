@@ -35,8 +35,7 @@ commands.put("/cart-items/put", (request, response) => {
 commands.delete("/cart-items/delete", (request, response) => {
   // console.log("GET all.");
   // res.send(store);
-  pool.query(`insert into ShoppingCart (product, price, quantity)
-   values ('test item', 99.99, 1)`).then(function(result){
+  pool.query(`select * from ShoppingCart `).then(function(result){
     response.send(result.rows);
   });
 });

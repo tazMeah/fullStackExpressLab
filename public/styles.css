@@ -1,9 +1,11 @@
 section {
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
     border: 1px solid black;
     background: #a6494f;
     margin-bottom: 10px;
+    justify-content: space-between;
 }
 figure {
     padding: 20px;
@@ -20,14 +22,15 @@ figure div {
 }
 
 section button {
-    position: absolute;
+    /*position: absolute;*/
     bottom: 20px;
     right: 60px;
     background: linear-gradient(to right, rgba(52, 36, 48, 0.74) 0%, rgba(52, 36, 48, 0.78) 30%, rgba(52, 36, 48, 0.82) 46%, rgba(52, 36, 48, 0.92) 69%, rgba(52, 36, 48, 0.97) 100%);
-    padding: 14px;
+    padding: 20px;
     color: #fff;
     cursor: pointer;
     font-family: "Work Sans", sans-serif;
+    height: 20px;
 }
 section button:hover {
     background-color: rgb(134, 134, 150);
@@ -50,7 +53,12 @@ h2 {
     font-Size: 49px;
 }
 
+div.buttons {
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
 
 
-
-
+form {
+    color: black;
+}

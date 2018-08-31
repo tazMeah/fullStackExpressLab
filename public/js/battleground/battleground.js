@@ -1,11 +1,11 @@
-"use strict";
-const battleGround = {
-  templateUrl: ``,
-  controller: ["ResultsService", function(ResultsService) {
-    const vm = this;
-  }]
-};
+// "use strict";
+// const battleGround = {
+//   templateUrl: ``,
+//   controller: ["ResultsService", function(ResultsService) {
+//     const vm = this;
+//   }]
+// };
 
-angular
-  .module("App")
-  .component("battleGround", battleGround);
+// angular
+//   .module("App")
+//   .component("battleGround", battleGround);
