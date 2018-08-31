@@ -19,15 +19,7 @@ function CartService($http) {
       return vm.userCart;
     });
   };
-  vm.getOpponent = () => {
-    return $http({
-      url: "/cart/id/" + 25,
-      method: "GET"
-    }).then((response) => {
-      vm.opponentCart = response;
-      return vm.opponentCart;
-    });
-  };
+  
 }
 
 angular
