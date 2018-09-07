@@ -6,36 +6,34 @@ const commands = express.Router();
 const pool = require("../pg-connection-pool.js");
 
 
-commands.get("/cart-items", (request, response) => {
-  // console.log("GET all.");
-  // res.send(store);
+commands.get("/cart-items", function(request, response){
+  // says when the browser navigates to /cart-items, query the database and return the results from the query
   pool.query("select * from ShoppingCart").then(function(result){
     response.send(result.rows);
   });
 });
 
-commands.post("/cart-items/post", (request, response) => {
-  // console.log("GET all.");
-  // res.send(store);
+commands.post("/cart-items/", function(request, response) {
+  const data = request.body;
   pool.query(`insert into ShoppingCart (product, price, quantity)
-   values ('test item', 99.99, 1)`).then(function(result){
+   values ('${data.product}', ${data.price}, ${data.quantity})`).then(function(result){
     response.send(result.rows);
   });
 });
 
-commands.put("/cart-items/put", (request, response) => {
-  // console.log("GET all.");
-  // res.send(store);
-  pool.query(`insert into ShoppingCart (product, price, quantity)
-   values ('test item', 99.99, 1)`).then(function(result){
-    response.send(result.rows);
-  });
-});
+// commands.put("/cart-items/put", (request, response) => {
+//   // console.log("GET all.");
+//   // res.send(store);
+//   pool.query(`insert into ShoppingCart (product, price, quantity)
+//    values ('test item', 99.99, 1)`).then(function(result){
+//     response.send(result.rows);
+//   });
+// });
 
-commands.delete("/cart-items/delete", (request, response) => {
-  // console.log("GET all.");
-  // res.send(store);
-  pool.query(`select * from ShoppingCart `).then(function(result){
+commands.delete("/cart-items/:id", function(request, response) {
+  const data = request.body;
+  const id = request.params.id;
+  pool.query(`DELETE FROM ShoppingCart where id = ${id}`).then(function(result){
     response.send(result.rows);
   });
 });

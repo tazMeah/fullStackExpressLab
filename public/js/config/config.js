@@ -1,16 +1,20 @@
 "use strict";
 angular
   .module("App")
-  .config(($routeProvider) => {
+  .config(["$routeProvider", function ($routeProvider){
     $routeProvider
-      .when("/select-cart", {
-        template: "<select-cart></select-cart>"
+      .when("/home", {
+        template: `<h1>Connected to Config</h1>`
       })
-      // .when("/battleground", {
-      //   template: "<battle-ground></battle-ground>"
-      // })
-      // .when("/results", {
-      //   template: "<results></results>"
-      // })
-      .otherwise({ redirectTo: "/select-cart" });
-  });
+      .when("/cart-items", {
+        template: `<h1>Connected to Config</h1>`
+      })
+      .when("/select-cart", {
+        template: `<cart-items></cart-items>`
+      })
+      
+      .otherwise({ redirectTo: "/home" });
+  }]);
+
+
+
