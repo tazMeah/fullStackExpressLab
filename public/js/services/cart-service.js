@@ -29,19 +29,13 @@ function CartService($http) {
   // };
   
   vm.removeItem = function(id){
-    // return $http({
-    //   url: "/cart-items/:id",
-    //   method: "DELETE"
-    // }).then(function(response){
-    //   console.log(`We are in the cart-service file. Prepairing to delete id:${id}.`);
-    //   vm.userCart = response;
-    //   return vm.userCart;
-    // });
-    $http.delete("/cart-items:id", function(req, res){
-      const id = req.params.id;
-      console.log(`The id is: ${id}`);
+
+    $http.delete(`/cart-items/${id}`, function(req, res){
 
     })
+
+    
+
   };
   
 }

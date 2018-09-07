@@ -31,9 +31,9 @@ commands.post("/cart-items/", function(request, response) {
 // });
 
 commands.delete("/cart-items/:id", function(request, response) {
-  const data = request.body;
   const id = request.params.id;
-  pool.query(`DELETE FROM ShoppingCart where id = ${id}`).then(function(result){
+  
+  pool.query(`DELETE FROM ShoppingCart where id =`+id).then(function(result){
     response.send(result.rows);
   });
 });
